@@ -1,14 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import store from '../store'
 
 defineProps({
   msg: String,
 })
 
 const count = ref(0)
+const test = computed(() => store.state.test)
 </script>
 
 <template>
+  {{ test }}
   <h1>{{ msg }}</h1>
 
   <div class="card">
